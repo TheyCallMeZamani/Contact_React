@@ -1,17 +1,25 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Contact extends Component {
   render() {
+    // Use destructuring =>
+    const { name, phone, email } = this.props.contact;
     return (
-      <div>
-        <h4>Xamani</h4>
-        <ul>
-          <li>Email: JohnDoe@gmail.com</li>
-          <li>Phone: 555-555-333</li>
+      <div className="card card-body mb-3">
+        <h4>Name: {name}</h4>
+        <ul className="list-group">
+          <li className="list-group-item">Email: {email}</li>
+          <li className="list-group-item">Phone: {phone}</li>
         </ul>
       </div>
     );
   }
 }
+
+// TypeChecking
+Contact.propTypes = {
+  contact: PropTypes.object.isRequired
+};
 
 export default Contact;
