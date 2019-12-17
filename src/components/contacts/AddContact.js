@@ -30,6 +30,8 @@ class AddContact extends Component {
       phone: "",
       errors: {}
     });
+    // to redirect to home page after adding a contact
+    this.props.history.push("/");
   };
 
   onChange = e => {
@@ -51,7 +53,7 @@ class AddContact extends Component {
                   <TextINputGroup
                     label="Name"
                     name="name"
-                    placeholder="Enter the f7&& name"
+                    placeholder="Enter the name"
                     value={name}
                     onChange={this.onChange}
                   />
@@ -76,7 +78,7 @@ class AddContact extends Component {
                   <input
                     type="submit"
                     value="Add Contact"
-                    className="btn btn-dark btn-block"
+                    className="btn btn-danger btn-block"
                   />
                 </form>
               </div>
